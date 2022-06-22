@@ -1,8 +1,9 @@
  
 <template>
   <div class="downloadwrap">
-    <div style="text-align: center; padding-top: 35%"></div>
-    <div class="downloadbtn" @click="download">下载App</div>
+    <img class="logo-img" src="@/assets/default_logo_ldy@2x.png" alt="" />
+    <img class="down-img" src="@/assets/default_ldy@2x.png" alt="" />
+    <div class="downloadbtn" @click="download">立即下载</div>
   </div>
 </template>
 <script>
@@ -107,17 +108,40 @@ i {
   }
 }
 
+.downloadwrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.logo-img {
+  width: 100%;
+  margin-top: 0px;
+}
+
+.down-img {
+  margin-top: 10px;
+  width: 100%;
+}
+
 .downloadbtn {
-  width: 260px;
-  height: 40px;
-  line-height: 40px !important;
-  color: white;
-  background: linear-gradient(270deg, #37a0ff, #2b6eef);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  background-color: #3097ff;
+  width: 220px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 50px;
+  letter-spacing: 0.22px;
   text-align: center;
-  font-size: 0.6rem;
-  line-height: 1rem;
-  margin: 15% auto;
-  border-radius: 0.2rem;
+  margin-top: 20px;
 }
 </style>
  

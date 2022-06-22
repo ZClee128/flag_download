@@ -1,10 +1,16 @@
  
 <template>
-  <div class="guide-wrap" v-show="guideShow">app下载</div>
+  <div class="guide-wrap" v-show="guideShow">
+    <div class="wxtip">在微信中无法下载APP
+      1. 请点击右上角按钮 
+      2. 选择【在浏览器中打开】</div>
+    <img class="logo-img" src="@/assets/default_logo_ldy@2x.png" alt="" />
+    <img class="down-img" src="@/assets/default_ldy@2x.png" alt="" />
+    <div class="downloadbtn">立即下载</div>
+  </div>
 </template>
 <script >
-
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 
@@ -29,9 +35,9 @@ export default {
     } else if (this.isIOS(this.userAgent)) {
       //直接跳转app下载页面
       this.$router.push("/download");
-        // alert('ios')
+      // alert('ios')
     } else {
-      alert('无法判断终端操作系统类型',this.userAgent)
+      alert("无法判断终端操作系统类型", this.userAgent);
       document.write("userAgent: \t", this.userAgent);
     }
   },
@@ -91,6 +97,10 @@ i {
   box-sizing: border-box;
 }
 .guide-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -143,5 +153,43 @@ i {
 .wrap-fade {
   animation: fade 3s ease-in;
 }
+
+.logo-img {
+  width: 100%;
+  margin-top: 38px;
+}
+
+.down-img {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.downloadbtn {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  background-color: #3097ff;
+  width: 220px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 50px;
+  letter-spacing: 0.22px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.wxtip {
+  background: #3097ff;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
 </style>
  

@@ -107,6 +107,9 @@ i {
   left: 0;
   right: 0;
   background: white;
+  background-image: url("/src/assets/bc_ldy@2x.png");
+  background-size: cover;
+  background-position: center center;
 }
 .guide-item {
   display: block;

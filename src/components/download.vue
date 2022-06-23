@@ -40,20 +40,22 @@ export default {
         browser.versions.iPad
       ) {
         //判断是IOS后跳转到相应的链接
-        var loadDateTime = new Date();
-        window.setTimeout(function () {
-          var timeOutDateTime = new Date();
-          if (
-            Number(timeOutDateTime) - Number(loadDateTime) <
-            openAppStoreTime
-          ) {
-            window.location.href =
+        // var loadDateTime = new Date();
+        // window.setTimeout(function () {
+        //   var timeOutDateTime = new Date();
+        //   if (
+        //     Number(timeOutDateTime) - Number(loadDateTime) <
+        //     openAppStoreTime
+        //   ) {
+        //     window.location.href =
+        //       "https://apps.apple.com/cn/app/%E5%92%B8%E9%B1%BCflag/id1578074012";
+        //   } else {
+        //     window.close();
+        //   }
+        // }, 25);
+        // window.location.href = "https://hengfengstudio.com";
+        window.location.href =
               "https://apps.apple.com/cn/app/%E5%92%B8%E9%B1%BCflag/id1578074012";
-          } else {
-            window.close();
-          }
-        }, 25);
-        window.location.href = "https://hengfengstudio.com";
       } else if (browser.versions.android) {
         //判断是android后跳转到相应的链接
         this.goAndriAddr();
@@ -63,14 +65,12 @@ export default {
     goAndriAddr() {
       //跳转到安卓商城地址
       var ua = navigator.userAgent.toLowerCase();
-      let isOppo = ua.indexOf("oppo") != -1;
+      // let isOppo = ua.indexOf("oppo") != -1;
       let isHuawei = ua.indexOf("huawei") != -1;
       let isMi = ua.indexOf("redmi") != -1 || ua.indexOf("xiaomi") != -1;
       let hreff = "";
       // alert(ua)
-      if (isOppo) {
-        hreff = "vivoMarket://details?id=XXX";
-      } else if (isHuawei) {
+      if (isHuawei) {
         hreff = "https://appgallery.huawei.com/app/C106411875";
       } else if (isMi) {
         hreff = "https://app.mi.com/details?id=com.saltedfish.tool&ref=search";
@@ -84,7 +84,11 @@ export default {
 };
 </script>
 <style type="text/css">
-body,
+body {
+  background-image: url("/src/assets/bc_ldy@2x.png");
+  background-size: cover;
+  background-position: center center;
+}
 div,
 span,
 i {

@@ -7,10 +7,21 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "download",
   methods: {
     download() {
+      // this.$bridge.registerhandler('JS Echo', (data, responseCallback) => {
+      //     alert('JS Echo called with:', data)
+      //         responseCallback(data)
+      // }); 
+
+      this.$bridge.callhandler('ObjC Echo', {}, (data) => {
+      // 处理返回数据
+        console.log('JS Echo called with:', data)
+      });
+      return
       var browser = {
         versions: (function () {
           var u = navigator.userAgent,

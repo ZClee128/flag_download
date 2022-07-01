@@ -6,7 +6,7 @@
       2. 选择【在浏览器中打开】</div>
     <img class="logo-img" src="@/assets/default_logo_ldy@2x.png" alt="" />
     <img class="down-img" src="@/assets/default_ldy@2x.png" alt="" />
-    <div class="downloadbtn">立即下载</div>
+    <div class="downloadbtn" @click="download">立即下载</div>
   </div>
 </template>
 <script >
@@ -18,11 +18,12 @@ export default {
   name: "AppDownload",
   data() {
     return {
-      guideShow: false,
+      guideShow: true,
       userAgent: navigator.userAgent.toLowerCase(),
     };
   },
   created() {
+    
     if (this.isWeChatOrQQ(this.userAgent)) {
       // 是微信或者QQ，使页面变为引导页，引导用户在浏览器中打开该链接
       this.guideShow = true;
